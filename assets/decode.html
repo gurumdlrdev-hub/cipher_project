@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Decode - Cipher Code</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Import Google Font: Orbitron -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: 'Orbitron', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-color: #0d1117;
+                
+                /* Circuit Background */
+                background-image: url('https://res.cloudinary.com/ygllvtyg/image/upload/v1785172795/Screenshot_2026-07-27_224856_saundu.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                
+                color: #00BFFF;
+            }
+
+            .main {
+                width: 85%;
+                max-width: 650px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px; 
+            }
+
+            /* Box 1: Heading Area */
+            .heading_section {
+                border: 2px solid #00BFFF;
+                border-radius: 8px;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(10, 15, 30, 0.75);
+                backdrop-filter: blur(8px);
+                box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+            }
+
+            /* Box 2 & 3: Input and Output Boxes */
+            .card_box {
+                border: 2px solid #00BFFF;
+                border-radius: 8px;
+                padding: 20px;
+                background: rgba(10, 15, 30, 0.75);
+                backdrop-filter: blur(8px);
+                box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                position: relative;
+            }
+
+            h1 {
+                font-size: 22px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+            }
+
+            label {
+                font-size: 14px;
+                letter-spacing: 1px;
+                font-weight: 600;
+            }
+
+            /* Textarea for User Input */
+            textarea {
+                font-family: 'Orbitron', sans-serif;
+                background: rgba(5, 10, 20, 0.85);
+                border: 1px solid #00BFFF;
+                border-radius: 5px;
+                padding: 12px;
+                color: #00ffff;
+                font-size: 14px;
+                outline: none;
+                resize: vertical;
+                min-height: 90px;
+                transition: border-color 0.2s, box-shadow 0.2s;
+            }
+
+            textarea:focus {
+                border-color: #00ffff;
+                box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+            }
+
+            /* Submit Button Between Boxes */
+            .action_btn {
+                font-family: 'Orbitron', sans-serif;
+                background: rgba(10, 15, 30, 0.9);
+                border: 2px solid #00BFFF;
+                border-radius: 8px;
+                padding: 14px;
+                color: #00BFFF;
+                font-size: 16px;
+                font-weight: 700;
+                cursor: pointer;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            }
+
+            .action_btn:hover {
+                transform: translateY(-2px);
+                border-color: #00ffff;
+                box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+            }
+
+            /* Output Display Area */
+            .output_area {
+                font-family: 'Orbitron', sans-serif;
+                background: rgba(5, 10, 20, 0.9);
+                border: 1px dashed #00BFFF;
+                border-radius: 5px;
+                padding: 12px;
+                color: #00ffff;
+                font-size: 14px;
+                min-height: 90px;
+                word-break: break-all;
+                white-space: pre-wrap;
+            }
+
+            /* Header inside Output Box */
+            .output_header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .copy_btn {
+                font-family: 'Orbitron', sans-serif;
+                background: transparent;
+                border: 1px solid #00BFFF;
+                border-radius: 4px;
+                padding: 4px 10px;
+                color: #00ffff;
+                font-size: 11px;
+                cursor: pointer;
+                transition: background 0.2s, color 0.2s;
+            }
+
+            .copy_btn:hover {
+                background: #00BFFF;
+                color: #0d1117;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <!-- Heading Box -->
+            <div class="heading_section">
+                <h1>Decoding Page</h1>
+            </div>
+
+            <form action="/decode" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+                <!-- Box 2: User Cipher Input -->
+                <div class="card_box">
+                    <label for="decode_input">User Write Cipher Code to Decode</label>
+                    <textarea id="decode_input" name="decode_text" placeholder="Enter cipher numbers here..." required></textarea>
+                </div>
+
+                <!-- Submit Button Fixed Between Boxes -->
+                <button type="submit" class="action_btn">Decode Cipher</button>
+            </form>
+
+            <!-- Box 3: Decoded Text Result Box -->
+                {{ if .decodedOutput }}
+                <div class="card_box">
+                    <div class="output_header">
+                        <label>Decoded Output</label>
+                        <button type="button" class="copy_btn" onclick="navigator.clipboard.writeText(document.getElementById('decoded_output').innerText)">Copy</button>
+                    </div>
+                    <div id="decoded_output" class="output_area">{{ .decodedOutput }}</div>
+                </div>
+                {{ end }}
+        </div>
+    </body>
+</html>
