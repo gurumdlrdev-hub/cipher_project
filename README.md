@@ -101,6 +101,17 @@ CIPHER PROJECT/
 │   └── cipher_project (Cipher Mappings)   │
 └──────────────────────────────────────────┘
 
+## 🔑 Example: Encoding
+
+**Input:** Guru Golang Developer
+**Output (Cipher):** *!?# #!\^ !!!! &@&? $!%* %^@& !!!! $&?$ ##^\ \*^^ %!& **&&
+---
+## 🔑 Example: Decoding
+
+**Input (Cipher):** @*#* !!!! %\? !!!! \?*^ $@@# !!!! #^%& &!%# !!!! *?@$ ?%^! \*@?
+**Output (Decoded):** I am Loki from Ascard
+
+
 ## Usage
 * Sign Up / Login to create a secure account.
 *  Navigate to the Home Dashboard.
