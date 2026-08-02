@@ -112,7 +112,7 @@ CIPHER PROJECT/
 ### Sign Up Page
 ![Signup Screenshot](https://res.cloudinary.com/ygllvtyg/image/upload/v1785701928/Screenshot_2026-08-03_001056_cmscxg.png)
 
-### Log in Page
+### Login Page
 ![Login Screenshot](https://res.cloudinary.com/ygllvtyg/image/upload/v1785701928/Screenshot_2026-08-03_001132_hi7dtf.png)
 
 ### Home Page
