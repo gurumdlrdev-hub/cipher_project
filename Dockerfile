@@ -11,5 +11,5 @@ COPY --from=builder /app/cipher_project .
 COPY --from=builder /app/assets ./assets
 COPY --from=builder /app/database ./database
 
-EXPOSE 2424
+EXPOSE 7777
 CMD ["./cipher_project"]
