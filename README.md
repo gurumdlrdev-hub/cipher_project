@@ -59,6 +59,8 @@ CIPHER PROJECT/
 
 </details>
 
+---
+
 ## Installation & Setup
 ### Clone the Repository
 `git clone https://github.com/gurumdlrdev-hub/cipher_project.git`
@@ -69,6 +71,8 @@ CIPHER PROJECT/
 `docker run -p 7777:7777 cipher-project`
 ### Access via Browser
 `http://localhost:7777`
+
+---
 
 ## Architecture Diagram
 
@@ -101,6 +105,8 @@ CIPHER PROJECT/
 │   └── cipher_project (Cipher Mappings)   │
 └──────────────────────────────────────────┘
 
+---
+
 ## 🔑 Example: Encoding
 
 **Input:** Guru Golang Developer
@@ -108,9 +114,29 @@ CIPHER PROJECT/
 ---
 ## 🔑 Example: Decoding
 
-**Input (Cipher):** @*#* !!!! %\? !!!! \?*^ $@@# !!!! #^%& &!%# !!!! *?@$ ?%^! \*@?
+**Input (Cipher):** ```@*#* !!!! %\? !!!! \?*^ $@@# !!!! #^%& &!%# !!!! *?@$ ?%^! \*@?```
 **Output (Decoded):** I am Loki from Ascard
 
+---
+
+## 📸 Screenshots
+
+### Sign Up Page
+![Signup Screenshot](https://res.cloudinary.com/ygllvtyg/image/upload/v1785701928/Screenshot_2026-08-03_001056_cmscxg.png)
+
+### Log in Page
+![Login Screenshot](https://res.cloudinary.com/ygllvtyg/image/upload/v1785701928/Screenshot_2026-08-03_001132_hi7dtf.png)
+
+### Home Page
+![Home Page Screenshot](https://res.cloudinary.com/ygllvtyg/image/upload/v1785701928/Screenshot_2026-08-03_001211_iexpga.png)
+
+### Encode Page
+![Encode Screenshot](https://res.cloudinary.com/ygllvtyg/image/upload/v1785702611/Screenshot_2026-08-03_015633_rbotjb.png)
+
+### Decode Page
+![Decode Screenshot](https://res.cloudinary.com/ygllvtyg/image/upload/v1785702272/Screenshot_2026-08-03_015416_fybynj.png)
+
+---
 
 ## Usage
 * Sign Up / Login to create a secure account.
@@ -118,6 +144,7 @@ CIPHER PROJECT/
 *  Use the Encode Page to convert plain text into cipher symbols.
 *  Use the Decode Page to convert cipher symbols back into readable text.
 *  Logout securely with JWT session termination.
+---
 
 ## Author
 Guru – Software Engineering Intern
