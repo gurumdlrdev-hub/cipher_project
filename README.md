@@ -107,18 +107,6 @@ CIPHER PROJECT/
 
 ---
 
-## 🔑 Example: Encoding
-
-**Input:** Guru Golang Developer
-**Output (Cipher):** *!?# #!\^ !!!! &@&? $!%* %^@& !!!! $&?$ ##^\ \*^^ %!& **&&
----
-## 🔑 Example: Decoding
-
-**Input (Cipher):** ```@*#* !!!! %\? !!!! \?*^ $@@# !!!! #^%& &!%# !!!! *?@$ ?%^! \*@?```
-**Output (Decoded):** I am Loki from Ascard
-
----
-
 ## 📸 Screenshots
 
 ### Sign Up Page
